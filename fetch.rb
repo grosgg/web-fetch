@@ -24,10 +24,10 @@ if !File.exist?(filename) || !metadata
   end
 end
 
-file = File.open(filename)
-doc = Nokogiri::HTML(file)
-
 if metadata
+  file = File.open(filename)
+  doc = Nokogiri::HTML(file)
+
   puts "site: #{url}"
   puts "num_links: #{doc.css("a").count}"
   puts "images: #{doc.css("img").count}"
